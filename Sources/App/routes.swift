@@ -116,9 +116,8 @@ func routes(_ app: Application) throws {
             orderId: 4)
         
         
-        prerequisites.multiAppend(toArray: &prerequisites, items: gitCourse, seanAllenBeginnerCourse, hackingWithIosBook, stanfordXcodeTips, stewartLynchMasteringXcode, seanAllenTakeHomeProject, swiftPlaygrounds1, swiftPlaygrounds2)
+        prerequisites += [gitCourse, seanAllenBeginnerCourse, hackingWithIosBook, stanfordXcodeTips, stewartLynchMasteringXcode, seanAllenTakeHomeProject, swiftPlaygrounds1, swiftPlaygrounds2]
         
-        print("prerequisites populated: \(prerequisites)")
         return prerequisites
     }
     
@@ -178,22 +177,8 @@ func routes(_ app: Application) throws {
             orderId: 7)
         
         
-        
-        
-        projects.multiAppend(toArray: &projects, items: mortgageCalculator, jokeTellingBot, randomColorGenerator, sleepTracker, restaurantSocial, eventsMobileApp, walkingRoutes)
+        projects += [mortgageCalculator, jokeTellingBot, randomColorGenerator, sleepTracker, restaurantSocial, eventsMobileApp, walkingRoutes]
         
         return projects
     }
 }
-
-
-extension Array {
-    
-    func multiAppend<T: Content>(toArray array: inout [T], items: T...) {
-        var array = array
-        for course in items {
-            array.append(course)
-        }
-    }
-}
-
