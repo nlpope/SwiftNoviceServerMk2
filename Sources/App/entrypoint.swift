@@ -3,8 +3,10 @@ import Logging
 import NIOCore
 import NIOPosix
 
+@available(iOS 13.0.0, *)
 @main
 enum Entrypoint {
+    @available(iOS 13.0.0, *)
     static func main() async throws {
         var env = try Environment.detect()
         try LoggingSystem.bootstrap(from: &env)
